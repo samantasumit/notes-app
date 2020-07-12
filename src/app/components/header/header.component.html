@@ -1,1 +1,5 @@
-<button (click)="createNote()">Create</button>
+<div class="head-nav">
+    <input class="search" placeholder="Search..." (ngModelChange)="searchNotes()" [(ngModel)]="searchText">
+    <button *ngIf="notesService.selectedNote" class="delete" (click)="deleteNote(notesService.selectedNote)">Delete Note</button>
+    <button class="new-note" (click)="createNote()">New Note</button>
+</div>

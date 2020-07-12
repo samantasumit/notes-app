@@ -4,22 +4,28 @@ $header-height: 50px;
     height: $header-height;
     position: relative;
     .notes-header-inner {
-        position: absolute;
+        position: fixed;
         width: 100%;
-        height: 100%;
+        height: auto;
         z-index: 100;
+        max-height: $header-height;
         top: 0;
         left: 0;
     }
 }
 .notes-section {
     display: flex;
-    min-height: calc(100vh - $header-height);
+    min-height: calc(100vh - 50px);
     .notes-sidebar {
-        width: 240px;
+        width: 360px;
         height: 100%;
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
     }
     .notes-main {
         width: 100%;
+        height: 100%;
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
     }
 }

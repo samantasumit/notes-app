@@ -3,14 +3,14 @@
         {{ note?.lastUpdated | date:'full' }}
     </div>
     <div class="title">
-        <div class="editarea" [textContent]="note.title" (input)="note.title=$event.target.textContent" contenteditable="true"></div>
+        <div class="editarea" [attr.data-placeholder]="'Enter title here...'" [textContent]="note.title" (input)="note.title=$event.target.textContent; updateNoteTime()" contenteditable="true"></div>
     </div>
     <div class="data">
-        <div class="editarea" [textContent]="note.data" (input)="note.data=$event.target.textContent" contenteditable="true"></div>
+        <div class="editarea" [attr.data-placeholder]="'Enter notes here...'" [textContent]="note.data" (input)="note.data=$event.target.textContent; updateNoteTime()" contenteditable="true"></div>
     </div>
 </div>
 <div *ngIf="!note" class="note">
-    <p class="text-center">
-        No note found.
+    <p class="text-center light">
+        No notes found.
     </p>
 </div>

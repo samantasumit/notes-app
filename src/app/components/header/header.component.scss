@@ -1,0 +1,10 @@
+.head-nav {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    .search, .delete {
+        margin-right: 15px;
+    }
+}

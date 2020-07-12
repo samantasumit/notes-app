@@ -1,11 +1,15 @@
 <div *ngIf="notes?.length > 0" class="notes">
-    <ng-container *ngFor="let note of notes; let i = index;">
-        <div (click)="selectNote(i)" class="note-card">
+    <ng-container
+        *ngFor="let note of notes | searchText:searchText:'title':'data' | orderBy:'lastUpdated'; let i = index;">
+        <div (click)="selectNote(i)" [ngClass]="{ 'active': note?.id == notesService.selectedNote?.id }"
+            class="note-card">
             <div class="title">
-                <div [innerHTML]="note.title"></div>
+                <div *ngIf="note.title" [innerHTML]="note.title"></div>
+                <div *ngIf="!note.title" class="light">New Note</div>
             </div>
             <div class="data">
-                <div [innerHTML]="note.data"></div>
+                <div *ngIf="note.data" class="text" [innerHTML]="note.data"></div>
+                <div *ngIf="!note.data" class="light">New Note</div>
                 <div class="time">
                     {{ note?.lastUpdated | date:'short' }}
                 </div>
@@ -14,7 +18,7 @@
     </ng-container>
 </div>
 <div *ngIf="!notes || notes?.length == 0" class="notes">
-    <p class="text-center">
+    <p class="text-center light">
         No notes found.
     </p>
 </div>

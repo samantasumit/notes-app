@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { INote } from 'src/app/interfaces/common.interface';
+import { NotesService } from 'src/app/services/notes.service';
 
 @Component({
   selector: 'app-notes',
@@ -10,9 +11,13 @@ export class NotesComponent implements OnInit {
 
   @Input('note') note: INote;
 
-  constructor() { }
+  constructor(public notesService: NotesService) { }
 
   ngOnInit() {
+  }
+
+  updateNoteTime() {
+    this.notesService.updateNoteTime();
   }
 
 }

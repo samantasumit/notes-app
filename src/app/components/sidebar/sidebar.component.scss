@@ -1,22 +1,82 @@
 .text-center {
     text-align: center;
 }
+.light {
+    opacity: 0.5;
+}
 .notes {
     height: 100%;
-    .editarea {
+    .note-card {
+        padding: 16px 20px;
+        border-right: 2px solid transparent;
         height: 100%;
         width: 100%;
-        outline: none;
-        box-shadow: none;
-    }
-    .time {
-        opacity: 0.7;
-    }
-    .title {
-        font-weight: bold;
-        height: 50px;
-    }
-    .data {
-        height: 100%;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        transition: all 0.3s;
+        justify-content: space-between;
+        height: 90px;
+        background-color: #f6f6f6;
+        &.active {
+            background-color: #4d7cfe1a;
+        }
+        &:hover {
+            background-color: #4d7cfe1a;
+            cursor: pointer;
+        }
+        .editarea {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            box-shadow: none;
+        }
+        .title {
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 15px;
+            text-align: left;
+            color: #2f2f2f;
+            margin-bottom: 0;
+            max-width: 100%;
+            width: auto;
+            height: 25px;
+            line-height: 21px;
+        }
+        .data {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            margin: 2px 0;
+            font-weight: 500;
+            color: #5a626a;
+            font-size: 13px;
+            line-height: 18px;
+            text-align: left;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: break-word;
+            max-height: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            .text {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                padding-right: 5px;
+            }
+            .time {
+                font-style: italic;
+                opacity: 0.7;
+            }
+        }
     }
 }
