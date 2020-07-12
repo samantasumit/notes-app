@@ -17,7 +17,6 @@
     .editarea:empty:before {
         content: attr(data-placeholder);
         border-radius: 0;
-        font-size: 13px;
         color: #88838c;
         cursor: text;
     }
@@ -45,11 +44,15 @@
     }
     .title {
         font-weight: bold;
-        height: 30px;
+        min-height: 30px;
         margin-top: 15px;;
         margin-bottom: 15px;
+        font-size: large;
+        line-height: 1.4;
     }
     .data {
         height: 100%;
+        font-size: medium;
+        line-height: 1.4;
     }
 }

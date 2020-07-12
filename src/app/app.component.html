@@ -2,7 +2,7 @@
   <app-header class="notes-header-inner"></app-header>
 </div>
 <div class="notes-section">
-  <div class="notes-sidebar">
+  <div class="notes-sidebar" [ngClass]="{ 'expand' : notesService.isSidebarExpanded }">
     <app-sidebar [notes]="notesService.notes"></app-sidebar>
   </div>
   <div class="notes-main">

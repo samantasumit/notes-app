@@ -29,3 +29,21 @@ $header-height: 50px;
         overflow-y: auto;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .notes-section {
+        .notes-sidebar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            overflow: hidden;
+            width: 0;
+            z-index: 99;
+            background: white;
+            transition: all 0.3s;
+            &.expand {
+                width: 100%;
+            }
+        }
+    }
+}

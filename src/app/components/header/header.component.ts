@@ -30,4 +30,8 @@ export class HeaderComponent implements OnInit {
     this.notesService.deleteNote(selectedNote);
   }
 
+  toggleSidebar() {
+    this.notesService.toggleSidebar();
+  }
+
 }

@@ -11,8 +11,10 @@ export class NotesService {
   searchTextSubject: Subject<string>;
   notes: Array<INote>;
   selectedNote: INote;
+  isSidebarExpanded: boolean;
 
   constructor() {
+    this.isSidebarExpanded = false;
     this.searchTextSubject = new Subject();
     this.notes = [];
     this.getNotesFromStorage();
@@ -98,5 +100,9 @@ export class NotesService {
 
       }
     }
+  }
+
+  toggleSidebar() {
+    this.isSidebarExpanded = !this.isSidebarExpanded;
   }
 }
