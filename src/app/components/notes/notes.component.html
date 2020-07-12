@@ -1,0 +1,16 @@
+<div *ngIf="note" class="note">
+    <div class="time">
+        {{ note?.lastUpdated | date:'full' }}
+    </div>
+    <div class="title">
+        <div class="editarea" [textContent]="note.title" (input)="note.title=$event.target.textContent" contenteditable="true"></div>
+    </div>
+    <div class="data">
+        <div class="editarea" [textContent]="note.data" (input)="note.data=$event.target.textContent" contenteditable="true"></div>
+    </div>
+</div>
+<div *ngIf="!note" class="note">
+    <p class="text-center">
+        No note found.
+    </p>
+</div>

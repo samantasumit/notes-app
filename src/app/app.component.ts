@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NotesService } from './services/notes.service';
+import { INote } from './interfaces/common.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'notes-app';
+  
+  constructor(public notesService: NotesService) {
+
+  }
 }
