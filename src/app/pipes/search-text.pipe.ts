@@ -13,7 +13,7 @@ export class SearchTextPipe implements PipeTransform {
         return value;
       }
       return value.filter((val) => {
-        if (val && val[key] && typeof val[key] === 'string' && val[key].toLowerCase().includes(searchText)) {
+        if (val && val[key] && typeof val[key] === 'string' && searchText && val[key].toLowerCase().includes(searchText.toLowerCase())) {
           return val;
         }
       });
@@ -25,10 +25,10 @@ export class SearchTextPipe implements PipeTransform {
         return value;
       }
       return value.filter((val) => {
-        if (val && val[key] && typeof val[key] === 'string' && val[key].toLowerCase().includes(searchText)) {
+        if (val && val[key] && typeof val[key] === 'string' && searchText && val[key].toLowerCase().includes(searchText.toLowerCase())) {
           return val;
         }
-        if (val && val[key2] && typeof val[key2] === 'string' && val[key2].toLowerCase().includes(searchText)) {
+        if (val && val[key2] && typeof val[key2] === 'string' && searchText && val[key2].toLowerCase().includes(searchText.toLowerCase())) {
           return val;
         }
       });
