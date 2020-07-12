@@ -76,6 +76,7 @@ export class NotesService {
   selectNote(index: number) {
     if (this.notes[index]) {
       this.selectedNote = this.notes[index];
+      this.isSidebarExpanded = false;
     }
   }
 
