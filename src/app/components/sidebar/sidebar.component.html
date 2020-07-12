@@ -1,7 +1,7 @@
 <div *ngIf="notes?.length > 0" class="notes">
     <ng-container
         *ngFor="let note of notes | searchText:searchText:'title':'data' | orderBy:'lastUpdated'; let i = index;">
-        <div (click)="selectNote(i)" [ngClass]="{ 'active': note?.id == notesService.selectedNote?.id }"
+        <div (click)="selectNote(note?.id)" [ngClass]="{ 'active': note?.id == notesService.selectedNote?.id }"
             class="note-card">
             <div class="title">
                 <div class="inner-t" *ngIf="note.title" [innerHTML]="note.title"></div>

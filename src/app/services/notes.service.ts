@@ -56,16 +56,6 @@ export class NotesService {
     }
   }
 
-  editNote(index: number, title: string, data: string) {
-    if (this.notes[index]) {
-      const note = this.notes[index];
-      note.title = title;
-      note.data = data;
-      note.lastUpdated = new Date();
-      this.addNotesToStorage(this.notes);
-    }
-  }
-
   updateNoteTime() {
     if (this.selectedNote) {
       this.selectedNote.lastUpdated = new Date();
@@ -74,8 +64,9 @@ export class NotesService {
   }
 
   selectNote(index: number) {
-    if (this.notes[index]) {
-      this.selectedNote = this.notes[index];
+    const seletedIndex = this.findNoteIndex(index);
+    if (seletedIndex != -1) {
+      this.selectedNote = this.notes[seletedIndex];
       this.isSidebarExpanded = false;
     }
   }
